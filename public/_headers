@@ -1,0 +1,12 @@
+# Encabezados de seguridad para Cloudflare Pages.
+# static.cloudflareinsights.com y cloudflareinsights.com quedan habilitados para Cloudflare Web Analytics.
+/*
+  Content-Security-Policy: default-src 'self'; script-src 'self' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob:; connect-src 'self' https://cloudflareinsights.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()
+
+# Las previews de Cloudflare (*.pages.dev) no se indexan en Google: solo el dominio definitivo.
+https://:project.pages.dev/*
+  X-Robots-Tag: noindex
